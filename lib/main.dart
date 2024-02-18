@@ -9,12 +9,37 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        backgroundColor: Colors.red,
+        appBar: AppBar(
+          title: const Text(
+            'Dicee',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.red,
+          centerTitle: true,
         ),
+        body: const DicePage(),
       ),
+    );
+  }
+}
+
+class DicePage extends StatelessWidget {
+  const DicePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Image.asset('assets/images/dice1.png'),
+        ),
+        Expanded(
+          child: Image.asset('assets/images/dice2.png'),
+        ),
+      ],
     );
   }
 }
